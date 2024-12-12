@@ -47,18 +47,16 @@ class User
 
     public function updateBalance($telegramId, $amount)
     {
-        // Получаем текущий баланс пользователя
         $balance = $this->checkBalance($telegramId);
 
-        // Если операция приведет к отрицательному балансу, прерываем выполнение
         if ($balance + $amount < 0) {
-            return false;  // Возвращаем false, чтобы показать, что операция не выполнена
+            return false;
         }
 
         // Обновляем баланс
         $stmt = $this->db->prepare("UPDATE users SET balance = balance + :amount WHERE telegram_id = :telegram_id");
         $stmt->execute(['amount' => $amount, 'telegram_id' => $telegramId]);
 
-        return true;  // Возвращаем true, если операция успешна
+        return true;
     }
 }

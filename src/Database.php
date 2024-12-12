@@ -15,7 +15,7 @@ class Database
     {
         $host = '127.0.0.1';
         $port = '5432';
-        $dbname = 'bothab';
+        $dbname = 'balancemasterbot';
         $user = 'laravel';
         $password = 'secret';
 

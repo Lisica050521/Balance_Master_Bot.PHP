@@ -61,7 +61,7 @@ class Bot
 
             $this->user->updateBalance($telegramId, $amount);
             $newBalance = $balance + $amount;
-            $this->api->sendMessage($telegramId, "Ваш новый баланс: $newBalance");
+            $this->api->sendMessage($telegramId, "Ваш новый баланс: $$newBalance");
             return;
         }
 
